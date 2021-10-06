@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Boostrap</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body>
+    <form class="row g-3 needs-validation" novalidate>
+
+        <div class="container">
+            <h1>Registro</h1>
+
+            <div class="nombre">
+                <label for="nombre" class="form-label" id="title">Nombre</label>
+                <input class="form-control" type="text" placeholder="Nombre completo" aria-label="default input example" required>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+
+            <div class="edad">
+                <label for="edad" class="form-label" id="title">Edad</label>
+                <select class="form-select" aria-label="Default select example" required>
+                    <option selected>Elige tu edad</option>
+                    <option value="1">16 años a 20 años</option>
+                    <option value="2">21 años a 29 años</option>
+                    <option value="3">Mayor de 30</option>
+                </select>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+
+            <div class="genero">
+                <label for="genero" class="form-label" id="title">Genero</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                    Femenino
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked required>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                    Masculino
+                    </label>
+                </div>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+            
+            <div class="email">
+                <label for="exampleInputEmail1" class="form-label" id="title">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+
+            <div class="usuario">
+                <label for="usuario" class="form-label" id="title">Usuario</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" required>
+                </div>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="Password" class="form-label" id="title">Password</label>
+                <input type="password" class="form-control" placeholder="Password" aria-labelid="exampleInputPassword1" required>
+                <div class="valid-feedback">¡Campo valido!</div>
+                <div class="invalid-feedback">Debes completar los datos</div>
+            </div>
+
+            <div class="boton">
+                <input class="btn btn-primary" type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+
+    <script>
+(function () {
+'use strict'
+
+var forms = document.querySelectorAll('.needs-validation')
+
+Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+    }, false)
+    })
+})()
+    </script>
+</body>
+</html>
